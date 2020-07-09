@@ -27,8 +27,7 @@ remark_task:
 rubocop_task:
   container:
     image: ruby
-  bundle_cache:
-    <<: *bundle_cache
+  <<: *bundle_cache
   lint_script: toys rubocop
   only_if: ($CIRRUS_BRANCH == 'master') ||
     changesInclude(
@@ -45,10 +44,9 @@ rspec_task:
       image: ruby:2.5
       image: ruby:2.6
       image: ruby:2.7
-  bundle_cache:
-    <<: *bundle_cache
-  # environment:
-  #   CODECOV_TOKEN: ENCRYPTED[...]
+  <<: *bundle_cache
+  environment:
+    CODECOV_TOKEN: ENCRYPTED[d76209e4dedca30b97bcc3821a5cb08927a2123aa15fb259458aeb3aeadd29c3bcec40082d5d9b1d03e35e5625dea41a]
   test_script: toys rspec
   only_if: ($CIRRUS_BRANCH == 'master') ||
     changesInclude(
