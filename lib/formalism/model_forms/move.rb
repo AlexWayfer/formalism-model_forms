@@ -4,7 +4,7 @@ module Formalism
 	module ModelForms
 		## Base form for model moving
 		module Move
-			include Formalism::Form::Fields
+			include Formalism::ModelForms::Base
 
 			field :id, Integer
 

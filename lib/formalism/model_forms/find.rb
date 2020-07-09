@@ -4,7 +4,7 @@ module Formalism
 	module ModelForms
 		## Base form for model finding
 		module Find
-			include Formalism::Form::Fields
+			include Formalism::ModelForms::Base
 			include Memery
 
 			field :id, Integer, default: nil

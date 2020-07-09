@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
+require 'flame/pagination/for_forms'
+
 module Formalism
 	module ModelForms
 		## Base form for model listing
 		module List
+			include Formalism::ModelForms::Base
+			include Memery
 			extend ModelForms::Base::Plural
 
 			## Module for class methods

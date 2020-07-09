@@ -4,8 +4,8 @@ module Formalism
 	module ModelForms
 		## Base form for many instances of model finding
 		module Select
+			include Formalism::ModelForms::Base
 			extend ModelForms::Base::Plural
-			include Formalism::Form::Fields
 
 			field :id, Array, of: Integer, default: []
 

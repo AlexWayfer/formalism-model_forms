@@ -10,6 +10,7 @@ module Formalism
 		## Base form for models
 		module Base
 			extend ::ModuleMethods::Extension
+			include Formalism::Form::Fields
 
 			# TODO: Check
 			extend Forwardable
@@ -148,6 +149,7 @@ module Formalism
 
 			# Pluralizes instance_method name
 			module Plural
+				include Base
 				include Memery
 
 				using GorillaPatch::Inflections.from_sequel

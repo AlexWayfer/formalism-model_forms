@@ -4,7 +4,7 @@ module Formalism
 	module ModelForms
 		## Base form for model updating
 		module Update
-			include Formalism::Form::Fields
+			include Formalism::ModelForms::Base
 
 			## Redefine `filed` and `nested` class methods with a specific `:default` from `instance`
 			module ClassMethods

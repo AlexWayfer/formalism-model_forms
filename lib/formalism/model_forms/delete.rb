@@ -4,7 +4,7 @@ module Formalism
 	module ModelForms
 		## Base form for model deletion
 		module Delete
-			include Formalism::Form::Fields
+			include Formalism::ModelForms::Base
 
 			# module ClassMethods
 			# 	def inherited(form)
