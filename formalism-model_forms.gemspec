@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'date'
+require_relative 'lib/formalism/model_forms/version'
 
 Gem::Specification.new do |spec|
 	spec.name          = 'formalism-model_forms'
-	spec.version       = '0.1.0'
-	spec.date          = Date.today.to_s
+	spec.version       = Formalism::ModelForms::VERSION
 	spec.summary       = 'Standard Formalism forms for Sequel Models'
 	spec.description   = <<~DESC
 		Standard Formalism forms for Sequel Models, such like create, find, delete, etc.
