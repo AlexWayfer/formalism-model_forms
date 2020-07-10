@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 	spec.required_ruby_version = '>= 2.5.0'
 
 	spec.add_dependency 'alt_memery', '~> 2.0'
-	spec.add_dependency 'flame-pagination', '~> 0.2.0'
+	spec.add_dependency 'flame-pagination', '~> 0.3.0'
 	spec.add_dependency 'formalism', '~> 0.1.0'
 	spec.add_dependency 'gorilla_patch', '~> 4.0'
 	spec.add_dependency 'module_methods', '~> 0.1.0'
