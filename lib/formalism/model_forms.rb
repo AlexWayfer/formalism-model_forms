@@ -37,9 +37,8 @@ module Formalism
 
 			def define_other_model_forms(forms_namespace)
 				%i[Create Delete Find FindOrCreate List Move Update].each do |form_name|
-					p form_name
 					forms_namespace::Model.const_set form_name, (Class.new(forms_namespace::Model::Base) do
-						include p ModelForms.const_get(form_name, false)
+						include ModelForms.const_get(form_name, false)
 					end)
 				end
 
