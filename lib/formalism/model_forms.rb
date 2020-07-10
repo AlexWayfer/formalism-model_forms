@@ -14,13 +14,10 @@ module Formalism
 				forms_namespace: project_namespace::Forms,
 				models_namespace: (project_namespace::Models if project_namespace.const_defined?(:Models))
 			)
-				puts 'define Model forms namespace'
 				forms_namespace.const_set :Model, Module.new
 
-				puts 'define Model::Base form'
 				define_model_base_form forms_namespace, models_namespace
 
-				puts 'define Model::* forms'
 				define_other_model_forms forms_namespace
 			end
 
