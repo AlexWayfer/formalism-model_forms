@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.4.0 (2020-07-10)
+
+*   Remove `puts` about `define_for_project` steps
+
 ## 0.3.0 (2020-07-10)
 
 *   Remove debug actions
