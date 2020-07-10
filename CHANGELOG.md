@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.2.0 (2020-07-10)
+
+*   Update `flame-pagination` to version `0.3.0`, which allows Flame version 5.
+
 ## 0.1.0 (2020-07-10)
 
-*   Initial release
+*   Initial release.
