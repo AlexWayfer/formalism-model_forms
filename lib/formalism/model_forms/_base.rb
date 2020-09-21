@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'forwardable'
 require 'gorilla_patch/inflections'
 require 'gorilla_patch/namespace'
 require 'memery'
