@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.5.0 (2020-09-22)
+
+*   Require `forwardable` before its usage.
+
 ## 0.4.0 (2020-07-10)
 
 *   Remove `puts` about `define_for_project` steps
