@@ -35,19 +35,46 @@ gem install formalism-model_forms
 ## Usage
 
 ```ruby
-module Users
-  class Create < Formalism::ModelForms::Create
-    field :name
+# forms/_base.rb
 
-    private
+require 'formalism/model_forms'
 
-    def validate
-      if name.to_s.empty?
-        errors.add 'Name is not provided'
+## Define base form and model forms via gem
+module MyProject
+  module Forms
+    ## Base class for forms
+    class Base < Formalism::Form
+    end
+  end
+
+  Formalism::ModelForms.define_for_project self
+end
+```
+
+`.define_for_project` requires project namespace (`self` in the example above)
+and allows such options:
+
+*   `:forms_namespace`, default is `project_namespace::Forms`
+*   `:models_namespace`, default is `project_namespace::Models`
+
+```ruby
+# forms/user/create.rb
+
+module MyProject
+  module Forms
+    module User
+      class Create < Formalism::ModelForms::Create
+        field :name
+
+        private
+
+        def validate
+          errors.add 'Name is not provided' if name.to_s.empty?
+        end
+
+        # `execute` is inherited from `Formalism::ModelForms`
       end
     end
-
-    # `execute` is inherited from `Formalism::ModelForms`
   end
 end
 ```
