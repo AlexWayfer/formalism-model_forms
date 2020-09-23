@@ -32,16 +32,24 @@ module Formalism
 				end)
 			end
 
-			def define_other_model_forms(forms_namespace)
-				%i[Create Delete Find FindOrCreate List Move Update].each do |form_name|
-					forms_namespace::Model.const_set form_name, (Class.new(forms_namespace::Model::Base) do
-						include ModelForms.const_get(form_name, false)
-					end)
-				end
+			FORM_CLASSES =
+				%i[Create Delete Find FindOrCreate List Move Update]
+					.map { |name| [name, :Base] }
+					.push(%i[Select Find])
+					.to_h
+					.freeze
 
-				forms_namespace::Model.const_set :Select, (Class.new(forms_namespace::Model::Find) do
-					include ModelForms::Select
-				end)
+			def define_other_model_forms(forms_namespace)
+				FORM_CLASSES.each do |form_name, parent_name|
+					forms_namespace::Model.class_eval(
+						<<~CODE,
+							class #{form_name} < #{forms_namespace}::Model::#{parent_name}
+								include ModelForms::#{form_name}
+							end
+						CODE
+						__FILE__, __LINE__ - 4
+					)
+				end
 			end
 		end
 	end
