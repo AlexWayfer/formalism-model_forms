@@ -60,7 +60,9 @@ module Formalism
 			end
 
 			def initialize(*)
-				@cached = model.plugins.include?(Sequel::Plugins::StaticCache)
+				@cached =
+					Sequel::Plugins.const_defined?(:StaticCache) &&
+					model.plugins.include?(Sequel::Plugins::StaticCache)
 
 				super
 			end
