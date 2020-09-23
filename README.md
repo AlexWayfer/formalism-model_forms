@@ -5,7 +5,7 @@
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/AlexWayfer/formalism-model_forms.svg?style=flat-square)](https://codeclimate.com/github/AlexWayfer/formalism-model_forms)
 [![Depfu](https://img.shields.io/depfu/AlexWayfer/benchmark_toys?style=flat-square)](https://depfu.com/repos/github/AlexWayfer/formalism-model_forms)
 [![Inline docs](https://inch-ci.org/github/AlexWayfer/formalism-model_forms.svg?branch=master)](https://inch-ci.org/github/AlexWayfer/formalism-model_forms)
-[![license](https://img.shields.io/github/license/AlexWayfer/formalism-model_forms.svg?style=flat-square)](https://github.com/AlexWayfer/formalism-model_forms/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/github/license/AlexWayfer/formalism-model_forms.svg?style=flat-square)](LICENSE.txt)
 [![Gem](https://img.shields.io/gem/v/formalism-model_forms.svg?style=flat-square)](https://rubygems.org/gems/formalism-model_forms)
 
 Ruby gem with standard [Formalism](https://github.com/AlexWayfer/formalism) forms
