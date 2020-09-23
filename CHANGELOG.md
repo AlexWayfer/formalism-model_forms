@@ -2,6 +2,16 @@
 
 ## master (unreleased)
 
+## 0.6.0 (2020-09-23)
+
+*   Fix complex error with `name` of anonymous classes and `inherited`.
+    1.  Update `formalism` to a version with `super` in `inherited` method.
+    2.  Define non-anonymous classes and modules,
+        even `stub_class` or `def self.name` assignes `name` only after `inherited`.
+    3.  Yes, I hate `eval`, but I don't know how I can define these things in another working way.
+*   Use correct assigned constants, fix broken lookup.
+*   Fix `Base#initialize` for cases when there are no `static_cache` plugin at all.
+
 ## 0.5.0 (2020-09-22)
 
 *   Require `forwardable` before its usage.
