@@ -18,7 +18,7 @@ module Formalism
 				memoize def namespace
 					return super if super.demodulize != 'List'
 
-					FORMS_NAMESPACE.const_get(super.deconstantize, false)
+					self::FORMS_NAMESPACE.const_get(super.deconstantize, false)
 				end
 
 				def search_fields(*fields)

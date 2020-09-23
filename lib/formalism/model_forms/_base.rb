@@ -38,16 +38,16 @@ module Formalism
 				using GorillaPatch::Inflections
 
 				memoize def namespace
-					FORMS_NAMESPACE.const_get(deconstantize, false)
+					self::FORMS_NAMESPACE.const_get(deconstantize)
 				end
 
 				memoize def model_name
 					deconstantize.split('::')[2..-1].reverse
-						.find { |part| MODELS_NAMESPACE.const_defined?(part, false) || part == 'Model' }
+						.find { |part| self::MODELS_NAMESPACE.const_defined?(part, false) || part == 'Model' }
 				end
 
 				memoize def model
-					MODELS_NAMESPACE.const_get(model_name, false)
+					self::MODELS_NAMESPACE.const_get(model_name, false)
 				end
 
 				memoize def instance_name
