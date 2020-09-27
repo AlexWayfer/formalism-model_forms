@@ -30,7 +30,7 @@ module Formalism
 					self.id = id_or_instance
 				end
 
-				super params
+				super params || {}
 			end
 
 			private
