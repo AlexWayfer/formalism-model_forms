@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.6.1 (2020-09-28)
+
+*   Fix case when there is instance and `nil` params for `Update` form.
+
 ## 0.6.0 (2020-09-23)
 
 *   Fix complex error with `name` of anonymous classes and `inherited`.
