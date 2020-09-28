@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.6.2 (2020-09-28)
+
+*   Update `formalism` to a new version.
+
 ## 0.6.1 (2020-09-28)
 
 *   Fix case when there is instance and `nil` params for `Update` form.
