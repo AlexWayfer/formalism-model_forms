@@ -11,11 +11,20 @@ module Formalism
 				def inherited(child_form)
 					super
 
-					child_form.nested :find, child_form.namespace::Find,
+					child_form_path = File.dirname caller_locations(1..1).first.path
+					%w[find create].each { |form_type| require "#{child_form_path}/#{form_type}" }
+
+					child_form.define_nested_forms
+				end
+
+				protected
+
+				def define_nested_forms
+					nested :find, namespace::Find,
 						initialize: ->(form) { form.new(@params_or_instance) },
 						errors_key: nil
 
-					child_form.nested :create, child_form.namespace::Create,
+					nested :create, namespace::Create,
 						initialize: ->(form) { form.new(@params_or_instance) },
 						errors_key: nil,
 						merge_errors: -> { find_form.instance.nil? }
