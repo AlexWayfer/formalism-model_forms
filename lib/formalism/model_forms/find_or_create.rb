@@ -22,7 +22,7 @@ module Formalism
 				def define_nested_forms
 					nested :find, namespace::Find,
 						initialize: ->(form) { form.new(@params_or_instance) },
-						errors_key: nil
+						merge_errors: false
 
 					nested :create, namespace::Create,
 						initialize: ->(form) { form.new(@params_or_instance) },
