@@ -78,7 +78,7 @@ module Formalism
 
 			def ordered_unfiltered_dataset
 				result = unfiltered_dataset.from_self(alias: model.table_name)
-				result = result.reverse_order(:id) unless unfiltered_dataset.opts[:order]
+				result = result.reverse_order(:created_at) unless unfiltered_dataset.opts[:order]
 				result
 			end
 
@@ -87,7 +87,9 @@ module Formalism
 			end
 
 			def non_cached_dataset_for_execute
-				dataset.where(id: dataset.select(:id).limit(limit_by_page))
+				dataset.where(
+					primary_field_name => dataset.select(primary_field_name).limit(limit_by_page)
+				)
 			end
 		end
 	end

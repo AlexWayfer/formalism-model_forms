@@ -6,15 +6,15 @@ module Formalism
 		module Move
 			include Formalism::ModelForms::Base
 
-			field :id, Integer
+			primary_field :id, Integer
 
 			attr_reader :direction
 
-			def initialize(direction, id, how_many = 1)
+			def initialize(direction, primary_field_value, how_many = 1)
 				@direction = direction.to_sym
 				@how_many = how_many.to_i
 
-				super(id: id)
+				super(primary_field_name => primary_field_value)
 			end
 
 			private

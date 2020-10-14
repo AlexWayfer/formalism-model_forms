@@ -16,7 +16,7 @@ module Formalism
 			# 	end
 			# end
 
-			field :id, Integer
+			primary_field :id, Integer
 
 			private
 

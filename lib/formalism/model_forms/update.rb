@@ -21,15 +21,13 @@ module Formalism
 				end
 			end
 
-			PRIMARY_KEY = :id
+			primary_field :id, Integer, merge: false
 
-			field PRIMARY_KEY, Integer, merge: false
-
-			def initialize(params, pk_or_instance)
-				if pk_or_instance.is_a?(model)
-					self.instance = pk_or_instance
+			def initialize(params, pf_or_instance)
+				if pf_or_instance.is_a?(model)
+					self.instance = pf_or_instance
 				else
-					public_send "#{PRIMARY_KEY}=", pk_or_instance
+					public_send "#{primary_field_name}=", pf_or_instance
 				end
 
 				super params || {}

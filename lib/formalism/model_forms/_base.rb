@@ -17,7 +17,7 @@ module Formalism
 			extend Forwardable
 			def_delegators(
 				'self.class',
-				:namespace, :model_name, :model, :instance_variable_name
+				:primary_field_name, :namespace, :model_name, :model, :instance_variable_name
 			)
 
 			## Module for Base form class methods
@@ -27,11 +27,33 @@ module Formalism
 				def inherited(form)
 					super
 
+					form.primary_field_name = primary_field_name
+
 					return if form.instance_name == :model
 					return if form.method_defined?(form.instance_name.to_s)
 
 					form.alias_method form.instance_name, :instance
 					form.alias_method "#{form.instance_name}=", :instance=
+				end
+
+				def included(something)
+					something.primary_field_name = primary_field_name
+				end
+
+				attr_accessor :primary_field_name
+
+				def primary_field(name, *args, **kwargs)
+					remove_field primary_field_name if primary_field_name
+
+					field name, *args, **kwargs
+
+					self.primary_field_name = name
+				end
+
+				def remove_field(name)
+					super
+
+					self.primary_field_name = nil if name == primary_field_name
 				end
 
 				using GorillaPatch::Namespace
@@ -93,7 +115,9 @@ module Formalism
 			attr_writer :instance
 
 			def find_instance
-				model[id].public_send(@cached ? :dup : :itself)
+				model
+					.first(primary_field_name => public_send(primary_field_name))
+					.public_send(@cached ? :dup : :itself)
 			end
 
 			def field_condition(name, value)

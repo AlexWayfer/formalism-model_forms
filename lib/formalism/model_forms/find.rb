@@ -7,7 +7,7 @@ module Formalism
 			include Formalism::ModelForms::Base
 			include Memery
 
-			field :id, Integer, default: nil
+			primary_field :id, Integer, default: nil
 
 			def initialize(params_or_instance = {})
 				if params_or_instance.is_a?(Hash)

@@ -7,7 +7,7 @@ module Formalism
 			include Formalism::ModelForms::Base
 			extend ModelForms::Base::Plural
 
-			field :id, Array, of: Integer, default: []
+			primary_field :id, Array, of: Integer, default: []
 
 			def initialize(params_or_instance = {})
 				## Instance should be an `Array` if there is not `params`
