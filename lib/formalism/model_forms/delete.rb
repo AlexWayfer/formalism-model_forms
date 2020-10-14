@@ -21,7 +21,9 @@ module Formalism
 			private
 
 			def execute
-				instance.changes_author = changes_author if model.auditable?
+				if model.respond_to?(:auditable?) && model.auditable?
+					instance.changes_author = changes_author
+				end
 
 				instance.destroy
 				super
