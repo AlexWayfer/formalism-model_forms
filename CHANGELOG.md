@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.7.1 (2020-10-15)
+
+*   Fix `Delete` form for models without `auditable` plugin.
+
 ## 0.7.0 (2020-10-14)
 
 *   Add `primary_field`, don't lock on `id` field.
