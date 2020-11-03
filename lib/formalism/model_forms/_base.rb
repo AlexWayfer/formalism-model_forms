@@ -37,6 +37,7 @@ module Formalism
 				end
 
 				def included(something)
+					super
 					something.primary_field_name = primary_field_name
 				end
 
