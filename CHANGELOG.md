@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.7.2 (2020-11-11)
+
+*   Fix error with `primary_field`.
+*   Fix an error when project has no models (and namespace) yet.
+*   Update development dependencies.
+
 ## 0.7.1 (2020-10-15)
 
 *   Fix `Delete` form for models without `auditable` plugin.
