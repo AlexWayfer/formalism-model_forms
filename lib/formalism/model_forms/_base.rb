@@ -66,7 +66,7 @@ module Formalism
 
 				memoize def model_name
 					deconstantize.split('::')[2..-1].reverse
-						.find { |part| self::MODELS_NAMESPACE.const_defined?(part, false) || part == 'Model' }
+						.find { |part| self::MODELS_NAMESPACE&.const_defined?(part, false) || part == 'Model' }
 				end
 
 				memoize def model

@@ -47,3 +47,12 @@ module MyProject
 		end
 	end
 end
+
+module MyProjectWithoutModelsYet
+	module Forms
+		class Base < Formalism::Form
+		end
+	end
+
+	Formalism::ModelForms.define_for_project self
+end
