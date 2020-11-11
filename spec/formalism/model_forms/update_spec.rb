@@ -4,6 +4,12 @@ describe Formalism::ModelForms do
 	describe MyProject::Forms::User::Update do
 		subject { described_class }
 
+		describe '.namespace' do
+			subject { super().namespace }
+
+			it { is_expected.to eq MyProject::Forms::User }
+		end
+
 		describe '#initialize' do
 			subject { super().new(params, id_or_instance) }
 
