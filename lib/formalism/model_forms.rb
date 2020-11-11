@@ -41,14 +41,20 @@ module Formalism
 
 			def define_other_model_forms(forms_namespace)
 				FORM_CLASSES.each do |form_name, parent_name|
+					## https://github.com/rubocop-hq/rubocop/issues/9026
+					# rubocop:disable Style/DocumentDynamicEvalDefinition
 					forms_namespace::Model.class_eval(
 						<<~CODE,
+							# class Update < FB::Forms::Model::Base
+							#   include ModelForms::Update
+							# end
 							class #{form_name} < #{forms_namespace}::Model::#{parent_name}
 								include ModelForms::#{form_name}
 							end
 						CODE
-						__FILE__, __LINE__ - 4
+						__FILE__, __LINE__ - 7
 					)
+					# rubocop:enable Style/DocumentDynamicEvalDefinition
 				end
 			end
 		end
