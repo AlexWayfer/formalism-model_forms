@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.8.0 (2021-02-11)
+
+*   Support Ruby 3.
+*   Update development dependencies.
+
 ## 0.7.2 (2020-11-11)
 
 *   Fix error with `primary_field`.
