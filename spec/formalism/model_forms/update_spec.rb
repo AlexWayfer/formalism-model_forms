@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-## https://github.com/rubocop-hq/rubocop-rspec/issues/1131
-# rubocop:disable RSpec/FilePath
-describe Formalism::ModelForms do
-	# rubocop:enable RSpec/FilePath
+describe Formalism::ModelForms::Update do
 	describe MyProject::Forms::User::Update do
 		subject { described_class }
 
