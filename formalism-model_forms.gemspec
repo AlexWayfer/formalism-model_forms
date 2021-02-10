@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 	spec.metadata['changelog_uri'] =
 		'https://github.com/AlexWayfer/formalism-model_forms/blob/master/CHANGELOG.md'
 
-	spec.required_ruby_version = '>= 2.5.0'
+	spec.required_ruby_version = '>= 2.5', '< 4'
 
 	spec.add_dependency 'alt_memery', '~> 2.0'
 	spec.add_dependency 'flame-pagination', '~> 0.3.0'
