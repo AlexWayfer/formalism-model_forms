@@ -63,10 +63,7 @@ module Formalism
 			def execute
 				self.instance =
 					if dataset
-						if @cached
-						then cached_dataset_for_execute
-						else non_cached_dataset_for_execute.all
-						end
+						@cached ? cached_dataset_for_execute : non_cached_dataset_for_execute.all
 					else
 						[]
 					end
