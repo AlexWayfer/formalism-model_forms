@@ -1,6 +1,6 @@
 # Changelog
 
-## master (unreleased)
+## Unreleased
 
 ## 0.8.0 (2021-02-11)
 

@@ -1,10 +1,10 @@
 # Formalism Model Forms
 
 [![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/AlexWayfer/formalism-model_forms?style=flat-square)](https://cirrus-ci.com/github/AlexWayfer/formalism-model_forms)
-[![Codecov branch](https://img.shields.io/codecov/c/github/AlexWayfer/formalism-model_forms/master.svg?style=flat-square)](https://codecov.io/gh/AlexWayfer/formalism-model_forms)
+[![Codecov branch](https://img.shields.io/codecov/c/github/AlexWayfer/formalism-model_forms/main.svg?style=flat-square)](https://codecov.io/gh/AlexWayfer/formalism-model_forms)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/AlexWayfer/formalism-model_forms.svg?style=flat-square)](https://codeclimate.com/github/AlexWayfer/formalism-model_forms)
 [![Depfu](https://img.shields.io/depfu/AlexWayfer/benchmark_toys?style=flat-square)](https://depfu.com/repos/github/AlexWayfer/formalism-model_forms)
-[![Inline docs](https://inch-ci.org/github/AlexWayfer/formalism-model_forms.svg?branch=master)](https://inch-ci.org/github/AlexWayfer/formalism-model_forms)
+[![Inline docs](https://inch-ci.org/github/AlexWayfer/formalism-model_forms.svg?branch=main)](https://inch-ci.org/github/AlexWayfer/formalism-model_forms)
 [![License](https://img.shields.io/github/license/AlexWayfer/formalism-model_forms.svg?style=flat-square)](LICENSE.txt)
 [![Gem](https://img.shields.io/gem/v/formalism-model_forms.svg?style=flat-square)](https://rubygems.org/gems/formalism-model_forms)
 
