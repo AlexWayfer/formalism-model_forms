@@ -108,7 +108,7 @@ module Formalism
 
 			def execute
 				# TODO: Check
-				Actions::Application::Restart.run if @cached && ENV['RACK_ENV'] != 'test'
+				Actions::Application::Restart.run if @cached && ENV.fetch('RACK_ENV') != 'test'
 
 				instance
 			end
