@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.9.0 (2022-09-21)
+
+*   Make `#instance=` public method.
+*   Drop Ruby 2.5 support.
+*   Add Ruby 3.1 for CI.
+*   Update development dependencies.
+*   Resolve RuboCop offenses.
+
 ## 0.8.0 (2021-02-11)
 
 *   Support Ruby 3.
