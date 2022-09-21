@@ -82,6 +82,8 @@ module Formalism
 				end
 			end
 
+			attr_writer :instance
+
 			def initialize(*)
 				@cached =
 					Sequel::Plugins.const_defined?(:StaticCache) &&
@@ -112,8 +114,6 @@ module Formalism
 
 				instance
 			end
-
-			attr_writer :instance
 
 			def find_instance
 				model
