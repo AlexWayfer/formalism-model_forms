@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.10.0 (2022-09-24)
+
+*   Update `formalism` to a new version.
+
 ## 0.9.0 (2022-09-21)
 
 *   Make `#instance=` public method.
