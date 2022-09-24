@@ -42,7 +42,6 @@ Gem::Specification.new do |spec|
 	spec.add_development_dependency 'gem_toys', '~> 0.12.1'
 	spec.add_development_dependency 'toys', '~> 0.13.0'
 
-	spec.add_development_dependency 'codecov', '~> 0.6.0'
 	spec.add_development_dependency 'rspec', '~> 3.9'
 	spec.add_development_dependency 'simplecov', '~> 0.21.0'
 	spec.add_development_dependency 'simplecov-cobertura', '~> 2.1'

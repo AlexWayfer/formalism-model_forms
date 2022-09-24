@@ -1,19 +1,15 @@
 # frozen_string_literal: true
 
+require 'pry-byebug'
+
 require 'simplecov'
+
 if ENV['CI']
 	require 'simplecov-cobertura'
 	SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
 
 SimpleCov.start
-
-if ENV['CODECOV_TOKEN']
-	require 'codecov'
-	SimpleCov.formatter = SimpleCov::Formatter::Codecov
-end
-
-require 'pry-byebug'
 
 require_relative '../lib/formalism/model_forms'
 
