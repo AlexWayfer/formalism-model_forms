@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.10.1 (2022-09-24)
+
+*   Allow `gorilla_patch` version 5.
+*   Improve CI.
+
 ## 0.10.0 (2022-09-24)
 
 *   Update `formalism` to a new version.
