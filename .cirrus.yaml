@@ -47,19 +47,20 @@ rubocop_task:
     )
 
 rspec_task:
-  depends_on:
-    - remark
-    - rubocop
   container:
     matrix:
       - image: ruby:2.6
       - image: ruby:2.7
       - image: ruby:3.0
       - image: ruby:3.1
+
   <<: *bundle_cache
+
   environment:
     CODECOV_TOKEN: ENCRYPTED[d76209e4dedca30b97bcc3821a5cb08927a2123aa15fb259458aeb3aeadd29c3bcec40082d5d9b1d03e35e5625dea41a]
+
   test_script: bundle exec rspec
+
   only_if: ($CIRRUS_BRANCH == 'main') ||
     changesInclude(
       '.cirrus.yaml', '.gitignore', 'Gemfile', 'Rakefile', '*.gemspec', '.rspec',
