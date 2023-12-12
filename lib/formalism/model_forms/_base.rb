@@ -65,8 +65,12 @@ module Formalism
 				end
 
 				memoize def model_name
+					## Safe navigation for constant is required when project has no models yet
+					## https://github.com/AlexWayfer/formalism-model_forms/commit/93de44d444d21e649dc42f04fddedc0b58dfdb8c
+					# rubocop:disable Lint/RedundantSafeNavigation
 					deconstantize.split('::')[2..].reverse
 						.find { |part| self::MODELS_NAMESPACE&.const_defined?(part, false) || part == 'Model' }
+					# rubocop:enable Lint/RedundantSafeNavigation
 				end
 
 				memoize def model
