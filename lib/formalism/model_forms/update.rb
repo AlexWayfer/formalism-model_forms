@@ -30,7 +30,7 @@ module Formalism
 					public_send "#{primary_field_name}=", pf_or_instance
 				end
 
-				super params || {}
+				super(params || {})
 			end
 
 			private
