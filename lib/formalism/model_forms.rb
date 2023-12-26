@@ -3,7 +3,7 @@
 require 'formalism'
 require 'module_methods'
 
-Dir["#{__dir__}/model_forms/**/*.rb"].sort.each { |file| require file }
+Dir["#{__dir__}/model_forms/**/*.rb"].each { |file| require file }
 
 module Formalism
 	## Module for model forms
