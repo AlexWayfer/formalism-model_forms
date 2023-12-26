@@ -27,7 +27,7 @@ module Formalism
 				if pf_or_instance.is_a?(model)
 					self.instance = pf_or_instance
 				else
-					public_send "#{primary_field_name}=", pf_or_instance
+					public_send :"#{primary_field_name}=", pf_or_instance
 				end
 
 				super(params || {})
