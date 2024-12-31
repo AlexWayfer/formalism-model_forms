@@ -11,7 +11,7 @@ module Formalism
 
 			def initialize(params_or_instance = {})
 				if params_or_instance.is_a?(Hash)
-					super(params_or_instance)
+					super
 				else
 					@initialized_with_instance = true
 					self.instance = params_or_instance
