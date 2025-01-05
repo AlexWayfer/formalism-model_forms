@@ -13,9 +13,11 @@ describe Formalism::ModelForms::Update do
 		describe '#initialize' do
 			subject { super().new(params, id_or_instance) }
 
+			let(:expected_attrs) { { id: 42, name: 'Alex', age: 25 } }
+			let(:instance) { MyProject::Models::User.find(id: 42) }
+
 			context 'when there is an instance' do
-				let(:instance_attrs) { { id: 42, name: 'Alex', age: 25 } }
-				let(:id_or_instance) { MyProject::Models::User.new(**instance_attrs) }
+				let(:id_or_instance) { instance }
 
 				context 'when params are refined' do
 					let(:params) { { name: 'Ivan' } }
@@ -29,7 +31,7 @@ describe Formalism::ModelForms::Update do
 					describe '#to_params' do
 						subject { super().to_params }
 
-						it { is_expected.to eq instance_attrs.merge(params) }
+						it { is_expected.to eq expected_attrs.merge(params) }
 					end
 				end
 
@@ -45,7 +47,7 @@ describe Formalism::ModelForms::Update do
 					describe '#to_params' do
 						subject { super().to_params }
 
-						it { is_expected.to eq instance_attrs }
+						it { is_expected.to eq expected_attrs }
 					end
 				end
 
@@ -61,7 +63,7 @@ describe Formalism::ModelForms::Update do
 					describe '#to_params' do
 						subject { super().to_params }
 
-						it { is_expected.to eq instance_attrs }
+						it { is_expected.to eq expected_attrs }
 					end
 				end
 			end
