@@ -81,6 +81,10 @@ module MyProject
 				include User::Base
 			end
 
+			class Find < Forms::Model::Find
+				include User::Base
+			end
+
 			class Update < Forms::Model::Update
 				include User::Base
 			end
