@@ -85,6 +85,12 @@ module MyProject
 				include User::Base
 			end
 
+			class FindRefined < Forms::Model::Find
+				include User::Base
+
+				primary_field :id, Integer, default: nil
+			end
+
 			class Update < Forms::Model::Update
 				include User::Base
 			end
