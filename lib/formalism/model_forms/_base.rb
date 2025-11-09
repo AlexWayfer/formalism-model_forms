@@ -15,6 +15,7 @@ module Formalism
 
 			# TODO: Check
 			extend Forwardable
+
 			def_delegators(
 				'self.class',
 				:primary_field_name, :namespace, :model_name, :model, :instance_variable_name

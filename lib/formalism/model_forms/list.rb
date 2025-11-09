@@ -13,6 +13,7 @@ module Formalism
 			## Module for class methods
 			module ClassMethods
 				include Memery
+
 				using GorillaPatch::Namespace
 
 				memoize def namespace
