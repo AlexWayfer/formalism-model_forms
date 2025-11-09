@@ -150,7 +150,7 @@ module Formalism
 				conditions.any? ? conditions.reduce(:&) : conditions
 			end
 
-			def compare_value(instance_value, value)
+			def value_matched?(instance_value, value)
 				## It can be Number, nil, etc., but logic for Regexp is below
 				instance_value = instance_value.to_s if value.is_a?(String) && !instance_value.is_a?(Regexp)
 
@@ -170,7 +170,7 @@ module Formalism
 							self.class.fields_and_nested_forms[key].fetch(:compare_key, key)
 
 						Array(values).any? do |value|
-							compare_value instance.public_send(key), value
+							value_matched? instance.public_send(key), value
 						end
 					end
 				end
