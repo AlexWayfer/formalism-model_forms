@@ -20,6 +20,7 @@ module Formalism
 			private
 
 			POSSIBLE_DIRECTIONS = %i[up down].freeze
+			private_constant :POSSIBLE_DIRECTIONS
 
 			def validate
 				return if POSSIBLE_DIRECTIONS.include?(@direction)
