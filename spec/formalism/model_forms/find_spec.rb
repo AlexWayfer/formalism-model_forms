@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Formalism::ModelForms::Find do
-	shared_examples 'correct behavior' do
+	shared_examples 'correct descendant' do
 		describe '.namespace' do
 			subject { super().namespace }
 
@@ -51,12 +51,12 @@ describe Formalism::ModelForms::Find do
 	describe MyProject::Forms::User::Find do
 		subject { described_class }
 
-		include_examples 'correct behavior'
+		it_behaves_like 'correct descendant'
 	end
 
 	describe MyProject::Forms::User::FindRefined do
 		subject { described_class }
 
-		include_examples 'correct behavior'
+		it_behaves_like 'correct descendant'
 	end
 end
