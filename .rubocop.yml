@@ -38,6 +38,10 @@ Metrics/BlockLength:
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
+  Exclude:
+    <% `git status --ignored --porcelain`.lines.grep(/^!! /).each do |path| %>
+      - <%= path.sub(/^!! /, '') %>
+    <% end %>
 
 RSpec/NestedGroups:
   Enabled: false
