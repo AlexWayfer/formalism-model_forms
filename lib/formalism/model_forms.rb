@@ -39,6 +39,8 @@ module Formalism
 					.to_h
 					.freeze
 
+			private_constant :FORM_CLASSES
+
 			def define_other_model_forms(forms_namespace)
 				FORM_CLASSES.each do |form_name, parent_name|
 					forms_namespace::Model.class_eval(
