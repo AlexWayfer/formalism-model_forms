@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
 	spec.metadata['rubygems_mfa_required'] = 'true'
 
-	spec.required_ruby_version = '>= 3.0', '< 3.5'
+	spec.required_ruby_version = '>= 3.2', '< 3.5'
 
 	spec.add_dependency 'alt_memery', '~> 2.0'
 	spec.add_dependency 'flame-pagination', '~> 0.3.0'
