@@ -44,10 +44,10 @@ module Formalism
 
 				attr_accessor :primary_field_name
 
-				def primary_field(name, *args, **kwargs)
+				def primary_field(name, *, **)
 					remove_field primary_field_name if primary_field_name
 
-					field name, *args, **kwargs
+					field(name, *, **)
 
 					self.primary_field_name = name
 				end
