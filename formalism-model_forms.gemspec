@@ -29,10 +29,10 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '>= 3.2', '< 3.5'
 
-	spec.add_dependency 'alt_memery', '~> 2.0'
-	spec.add_dependency 'flame-pagination', '~> 0.3.0'
-	spec.add_dependency 'formalism', '~> 0.6.0'
-	spec.add_dependency 'gorilla_patch', '>= 4.0', '< 6'
-	spec.add_dependency 'module_methods', '~> 0.1.0'
+	spec.add_dependency 'alt_memery', '~> 3.0'
+	spec.add_dependency 'flame-pagination', '~> 1.0'
+	spec.add_dependency 'formalism', '~> 1.0'
+	spec.add_dependency 'gorilla_patch', '>= 4.0', '< 7'
+	spec.add_dependency 'module_methods', '~> 1.0'
 	spec.add_dependency 'sequel', '~> 5.0'
 end
